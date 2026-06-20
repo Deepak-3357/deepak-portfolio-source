@@ -1,0 +1,132 @@
+Perform a final professional polish of my portfolio website while preserving the current design, layout, dark theme, project cards, project detail modals, and animations.
+
+FINAL CHANGES TO APPLY:
+
+HERO SECTION
+
+* Ensure the typing animation works correctly.
+* Cycle through:
+  • Python Developer
+  • AI Enthusiast
+  • Systems Programmer
+* Remove any incomplete text such as "Pyt".
+
+HERO DESCRIPTION
+Replace the current description with:
+
+"Passionate Computer Science Engineering student specializing in Artificial Intelligence, Computer Vision, System Programming, and Software Development. Building intelligent solutions through AI, software engineering, and system design."
+
+TECHNICAL SKILLS
+
+* Keep the current Technical Skills section.
+* Keep the Skill Proficiency section below it.
+* Remove all progress bars and percentage indicators.
+* Use only categorized skill badges.
+
+Skill Proficiency Categories:
+
+ADVANCED
+
+* Python
+* C
+* SQL
+
+INTERMEDIATE
+
+* C++
+* Java
+* Power BI
+
+LEARNING
+
+* Machine Learning
+* JavaScript
+* Web Development
+* HTML
+* CSS
+
+Design Requirements:
+
+* Badge/pill based display only.
+* Advanced = cyan/green accent.
+* Intermediate = blue/purple accent.
+* Learning = orange/pink accent.
+* Equal spacing.
+* Modern hover effects.
+* Fully responsive.
+
+PROJECTS SECTION
+
+* Keep all existing projects.
+* Keep the project detail modal/popups.
+* Ensure every project modal contains:
+  • Problem
+  • Features
+  • How It Works
+  • Architecture
+  • Challenges
+  • Future Scope
+
+ARCHITECTURE DISPLAY
+Replace simple architecture text with structured flow layouts such as:
+
+Input Data
+↓
+Processing Engine
+↓
+Analysis Module
+↓
+Output Dashboard
+
+Use a visually appealing flow representation.
+
+PROJECT IMAGES
+
+* Ensure project screenshots are displayed clearly.
+* Prevent cropping of important content.
+* Use consistent image sizing across all project cards.
+
+EDUCATION SECTION
+Display:
+
+B.E. Computer Science and Engineering
+Saveetha School of Engineering, SIMATS
+Chennai, India
+Current Student
+Expected Graduation: 2029
+
+ACHIEVEMENTS SECTION
+Improve achievement wording to sound professional and resume-ready.
+
+Examples:
+
+* Developed an AI-powered attendance management system using computer vision and facial recognition.
+* Built a CPU scheduling simulator implementing FCFS, SJF, and Round Robin algorithms.
+* Designed a secure file management platform with encryption and RBAC.
+* Developed machine learning applications for demand forecasting and analytics.
+* Designed and simulated a Wi-Fi 6 WLAN architecture using Cisco Packet Tracer.
+
+CONTACT SECTION
+
+* Ensure Email, LinkedIn, and GitHub links work correctly.
+* If the contact form is not connected to a backend:
+  Display:
+
+"Contact form currently under development. Please reach me via email or LinkedIn."
+
+FOOTER
+Add a clean footer:
+
+Deepak R
+Computer Science Engineering Student | Python Developer | AI Enthusiast
+
+© 2026 Deepak R. All Rights Reserved.
+
+RESPONSIVENESS
+
+* Verify all sections work correctly on desktop, tablet, and mobile.
+* Prevent overlapping elements.
+* Ensure project cards stack properly on smaller screens.
+
+FINAL GOAL
+Make the portfolio look professional, internship-ready, recruiter-friendly, and suitable for academic project submission while keeping the current visual style intact.
