@@ -8,10 +8,12 @@ import Education from '@/components/sections/Education';
 import Achievements from '@/components/sections/Achievements';
 import Contact from '@/components/sections/Contact';
 import Footer from '@/components/sections/Footer';
+import CustomCursor from '@/components/CustomCursor';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
+      <CustomCursor />
       <Navigation />
       <main>
         <Hero />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ScanFace, Wifi } from 'lucide-react';
+import { Wifi } from 'lucide-react';
 import ProjectModal from '../ProjectModal';
 
 import secureFileImg from "@assets/Screenshot_2026-06-19_135320_1781873563742.png";
@@ -16,107 +16,140 @@ export type Project = {
   image?: string;
   placeholderIcon?: React.ReactNode;
   badges: string[];
+  featured?: boolean;
   details: {
     problem: string;
     works: string;
     architecture: string;
-    features: string;
-    challenges: string;
+    features: string | string[];
+    challenges: string | string[];
     future: string;
+    outcome?: string;
   };
 };
+
+const AttendancePlaceholder = () => (
+  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-blue-900/30 via-slate-900/40 to-purple-900/20">
+    <svg width="56" height="56" viewBox="0 0 56 56" fill="none" className="drop-shadow-[0_0_12px_rgba(59,130,246,0.6)]">
+      <circle cx="28" cy="20" r="12" stroke="#3b82f6" strokeWidth="2" fill="none" />
+      <circle cx="28" cy="20" r="5" fill="#3b82f6" fillOpacity="0.4" />
+      <path d="M8 48c0-11 9-18 20-18s20 7 20 18" stroke="#3b82f6" strokeWidth="2" fill="none" strokeLinecap="round" />
+      <rect x="36" y="30" width="16" height="16" rx="3" fill="#22d3ee" fillOpacity="0.15" stroke="#22d3ee" strokeWidth="1.5" />
+      <path d="M39 38l3 3 5-5" stroke="#22d3ee" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+    <span className="text-xs font-mono text-blue-300/70 tracking-widest uppercase">Face Recognition</span>
+  </div>
+);
 
 const projects: Project[] = [
   {
     id: 1,
     title: "Smart Attendance Management System",
-    shortDesc: "Computer vision based attendance system using face recognition.",
-    placeholderIcon: <ScanFace className="w-16 h-16 text-blue-400" />,
-    badges: ["Python", "OpenCV", "LBPH", "Haar Cascade"],
+    shortDesc: "AI-powered desktop application using real-time face recognition, liveness detection, and Qt 6 GUI for automated attendance management and analytics.",
+    placeholderIcon: null,
+    badges: ["C++17", "OpenCV 4.12", "Qt 6", "LBPH", "Haar Cascade", "CMake"],
     details: {
-      problem: "Manual attendance is error-prone and time-consuming.",
-      works: "Haar Cascade detects faces, LBPH recognizes them, and logs records to CSV.",
-      architecture: "Live Webcam Feed → Haar Cascade Face Detection → LBPH Face Recognition → Student Database Lookup → CSV Report Export",
-      features: "Face detection, liveness check, CSV reports",
-      challenges: "Varying lighting conditions affecting accuracy",
-      future: "Web dashboard, multi-camera support"
+      problem: "Manual attendance management is time-consuming, prone to human errors, and vulnerable to proxy attendance. Educational institutions require an automated and reliable solution for accurate attendance tracking.",
+      works: "The system captures live video through a webcam. Haar Cascade detects faces, LBPH recognizes registered students, and liveness detection verifies genuine presence. Attendance records are automatically stored in CSV reports, and statistics are displayed through a Qt 6 dashboard.",
+      architecture: "Live Webcam Feed → Face Detection (Haar Cascade) → Face Preprocessing → LBPH Face Recognition → Student Database Lookup → Liveness Verification → Attendance Logging → Analytics & Reports → Qt Dashboard GUI",
+      features: [
+        "Student Registration and Management",
+        "Face Dataset Collection using Webcam",
+        "LBPH Model Training",
+        "Real-Time Face Detection and Recognition",
+        "Liveness Detection",
+        "Automatic Attendance Marking",
+        "Duplicate Attendance Prevention",
+        "Unknown Face Detection",
+        "Attendance Analytics Dashboard",
+        "Date-Wise Attendance Reports",
+        "Student Profile Viewer",
+        "Email Report Generation",
+        "Admin Authentication",
+        "Modern Qt GUI Interface",
+      ],
+      challenges: [
+        "Varying lighting conditions affected face detection and recognition accuracy.",
+        "Preventing proxy attendance using photos or mobile screens required liveness detection techniques.",
+      ],
+      future: "Integrate Deep Learning-based face recognition (FaceNet / ArcFace) for improved accuracy. Develop a cloud-enabled web/mobile dashboard with multi-camera support for remote attendance monitoring.",
     }
   },
   {
     id: 2,
     title: "Wi-Fi 6 WLAN Architecture",
-    shortDesc: "Simulated high-density enterprise network topology.",
+    shortDesc: "Simulated high-density enterprise network topology using Wi-Fi 6 with OFDMA and MU-MIMO.",
     placeholderIcon: <Wifi className="w-16 h-16 text-purple-400" />,
-    badges: ["Cisco Packet Tracer", "OFDMA", "MU-MIMO"],
+    badges: ["Cisco Packet Tracer", "Wi-Fi 6", "OFDMA", "MU-MIMO"],
     details: {
-      problem: "High-density enterprise environments need efficient Wi-Fi.",
-      works: "Layered topology with OFDMA/MU-MIMO simulated in Packet Tracer.",
+      problem: "High-density enterprise environments need efficient Wi-Fi that traditional Wi-Fi 5 cannot handle at scale.",
+      works: "Layered network topology using Wi-Fi 6 features (OFDMA for multi-user scheduling, MU-MIMO for simultaneous transmissions) designed and simulated in Cisco Packet Tracer.",
       architecture: "Core Switch Layer → Distribution Layer → Wi-Fi 6 Access Points → High-Density Client Devices",
-      features: "OFDMA, MU-MIMO, topology design",
-      challenges: "Bandwidth allocation and interference mitigation",
-      future: "QoS policies, network monitoring integration"
+      features: "OFDMA & MU-MIMO implementation, network topology design, performance optimization, Packet Tracer simulation",
+      challenges: "Bandwidth allocation and interference mitigation across high-density client environments",
+      future: "QoS policies, network monitoring integration, real-time traffic analysis",
     }
   },
   {
     id: 3,
     title: "Secure File Management System",
-    shortDesc: "Encrypted file storage with RBAC.",
+    shortDesc: "Encrypted file storage platform with AES-256, SHA-256 integrity checks, and role-based access control.",
     image: secureFileImg,
     badges: ["Java", "MySQL", "AES-256", "SHA-256", "JDBC"],
     details: {
-      problem: "Sensitive files need strict encryption and access control.",
-      works: "AES-256 encrypts files, SHA-256 verifies integrity, RBAC restricts access.",
+      problem: "Sensitive file storage systems lack proper access controls and encryption, making them vulnerable to unauthorized access.",
+      works: "AES-256 encrypts files before storage, SHA-256 checksums verify integrity on retrieval, and RBAC restricts what each user can access based on their role.",
       architecture: "Java Frontend UI → User Authentication → RBAC Permission Engine → AES-256 Encryption Layer → MySQL Encrypted Storage",
-      features: "RBAC, encryption, SHA-256 checksums",
-      challenges: "Secure key management and performance overhead",
-      future: "Cloud storage integration, MFA"
+      features: "Role-based access control (RBAC), AES-256 encryption, SHA-256 integrity verification, user authentication",
+      challenges: "Secure key management without performance degradation; enforcing RBAC across nested file structures",
+      future: "Cloud storage integration, multi-factor authentication, audit logging dashboard",
     }
   },
   {
     id: 4,
     title: "Responsive CPU Task Scheduler",
-    shortDesc: "ML-assisted scheduling algorithm simulator.",
+    shortDesc: "ML-assisted CPU scheduling simulator comparing FCFS, Round Robin, and Priority algorithms with a performance dashboard.",
     image: cpuSchedulerImg,
-    badges: ["Python", "ML", "FCFS", "Round Robin", "Priority"],
+    badges: ["Python", "Machine Learning", "FCFS", "Round Robin", "Priority"],
     details: {
-      problem: "Understanding scheduling trade-offs requires active simulation.",
-      works: "Runs 3 algorithms, compares wait/turnaround times, ML recommends best approach.",
+      problem: "Understanding CPU scheduling algorithm trade-offs requires hands-on simulation with real performance metrics.",
+      works: "Users input process arrival and burst times. The simulator runs FCFS, Round Robin, and Priority algorithms, compares wait/turnaround times, and an ML model recommends the most efficient algorithm for the given workload.",
       architecture: "Process Input (Arrival & Burst Times) → Scheduling Algorithm Engine → ML Performance Analyzer → Comparison Dashboard",
-      features: "3 algorithms, ML analysis, perf dashboard",
-      challenges: "Complex preemptive simulation logic",
-      future: "Multi-core support, interactive Gantt charts"
+      features: "FCFS, Round Robin & Priority scheduling, adaptive ML-based analysis, performance comparison dashboard",
+      challenges: "Accurately simulating preemptive vs. non-preemptive scheduling edge cases",
+      future: "Multi-core simulation, interactive Gantt chart visualization, real-time OS process monitoring",
     }
   },
   {
     id: 5,
     title: "Custom CPU Simulator",
-    shortDesc: "Hands-on instruction execution simulator.",
+    shortDesc: "Interactive CPU simulator for designing custom instruction sets and visualizing step-by-step execution.",
     image: cpuSimulatorImg,
     badges: ["Python", "Qt 6", "Computer Architecture"],
     details: {
-      problem: "CPU learning needs hands-on instruction simulation for better understanding.",
-      works: "Design custom opcodes, write programs, step-by-step execution with register/memory view.",
+      problem: "Learning CPU architecture through theory alone leaves gaps — students need interactive simulation of instruction execution to build intuition.",
+      works: "Users design custom opcodes and operand schemas, write programs using those instructions, then step through execution watching registers and memory update in real time.",
       architecture: "Instruction Set Designer → Program Builder → CPU Execution Engine → Register & Memory Visualizer",
-      features: "Custom ISA, execution sim, register visualization",
-      challenges: "Building a flexible and robust instruction parser",
-      future: "Pipeline simulation, cache hierarchy visualization"
+      features: "Custom instruction set design, CPU execution simulation, register and memory visualization, interactive learning environment",
+      challenges: "Building a flexible instruction parser that handles variable operand counts and custom mnemonics without conflicts",
+      future: "Pipeline simulation, cache hierarchy visualization, assembly language compiler support",
     }
   },
   {
     id: 6,
     title: "Bike Demand Prediction",
-    shortDesc: "ML models for forecasting bike-sharing demand.",
+    shortDesc: "Machine learning model forecasting bike-sharing demand from historical data, visualized via Power BI.",
     image: bikeDemandImg,
-    badges: ["Python", "ML", "Power BI"],
+    badges: ["Python", "Machine Learning", "Power BI", "Data Science"],
     details: {
-      problem: "Bike-sharing demand forecasting is critical for resource planning.",
-      works: "Historical data preprocessed, features engineered, ML models trained, visualized via Power BI.",
+      problem: "Bike-sharing companies struggle to predict demand, leading to poor resource allocation and reduced service quality.",
+      works: "Historical bike rental data is preprocessed, features are engineered (hour, season, weather, holiday), and ML models are trained to predict hourly demand. Results are visualized in an interactive Power BI dashboard.",
       architecture: "Raw Historical Data → Data Preprocessing & Cleaning → Feature Engineering → ML Model Training → Power BI Dashboard",
-      features: "Predictive modeling, feature engineering, Power BI viz",
-      challenges: "Class imbalance, handling seasonal demand spikes",
-      future: "Real-time API integration, dynamic pricing"
+      features: "Predictive modeling, data preprocessing & feature engineering, Power BI visualization dashboard",
+      challenges: "Handling class imbalance and seasonal demand fluctuations; feature selection for time-series patterns",
+      future: "Real-time prediction API, mobile app integration, demand-based dynamic pricing",
     }
-  }
+  },
 ];
 
 export default function Projects() {
@@ -126,14 +159,14 @@ export default function Projects() {
     <section id="projects" className="py-24 relative">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-4">
-              <span className="text-primary font-mono text-xl">03.</span> 
+              <span className="text-primary font-mono text-xl">03.</span>
               Projects
               <div className="h-[1px] bg-white/10 flex-1 ml-4"></div>
             </h2>
@@ -143,27 +176,36 @@ export default function Projects() {
             {projects.map((project, idx) => (
               <motion.div
                 key={project.id}
+                data-cursor="card"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-card border border-border rounded-2xl overflow-hidden flex flex-col group hover:border-primary/50 transition-colors"
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                className="bg-card border border-border rounded-2xl overflow-hidden flex flex-col group hover:border-primary/50 transition-all duration-300"
               >
-                <div className="h-48 relative overflow-hidden bg-muted/30 flex items-center justify-center">
+                {/* Image / Placeholder */}
+                <div className="h-48 relative overflow-hidden bg-muted/30">
                   {project.image ? (
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" 
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
-                  ) : (
+                  ) : project.placeholderIcon ? (
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
                       {project.placeholderIcon}
                     </div>
+                  ) : (
+                    <div className="absolute inset-0 group-hover:scale-105 transition-transform duration-500">
+                      <AttendancePlaceholder />
+                    </div>
                   )}
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                    <Button 
-                      variant="secondary" 
+
+
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                    <Button
+                      data-cursor="detail"
+                      variant="secondary"
                       onClick={() => setSelectedProject(project)}
                       className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg"
                     >
@@ -171,34 +213,49 @@ export default function Projects() {
                     </Button>
                   </div>
                 </div>
-                
+
+                {/* Content */}
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-6 flex-1">{project.shortDesc}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {project.badges.slice(0, 3).map((badge, bIdx) => (
+                  <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors leading-snug">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-5 flex-1 leading-relaxed">
+                    {project.shortDesc}
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5 mt-auto mb-4">
+                    {project.badges.slice(0, 4).map((badge, bIdx) => (
                       <span key={bIdx} className="text-xs font-mono text-primary/80 bg-primary/10 px-2 py-1 rounded">
                         {badge}
                       </span>
                     ))}
-                    {project.badges.length > 3 && (
+                    {project.badges.length > 4 && (
                       <span className="text-xs font-mono text-muted-foreground bg-muted/50 px-2 py-1 rounded">
-                        +{project.badges.length - 3}
+                        +{project.badges.length - 4}
                       </span>
                     )}
                   </div>
+
+                  <Button
+                    data-cursor="detail"
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setSelectedProject(project)}
+                    className="w-full border-white/10 bg-white/5 hover:bg-white/10 hover:border-primary/40 text-sm transition-all"
+                  >
+                    View Technical Details
+                  </Button>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
       </div>
-      
-      <ProjectModal 
-        project={selectedProject} 
-        open={!!selectedProject} 
-        onOpenChange={(open) => !open && setSelectedProject(null)} 
+
+      <ProjectModal
+        project={selectedProject}
+        open={!!selectedProject}
+        onOpenChange={(open) => !open && setSelectedProject(null)}
       />
     </section>
   );

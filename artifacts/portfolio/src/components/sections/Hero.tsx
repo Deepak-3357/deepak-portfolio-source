@@ -36,12 +36,12 @@ export default function Hero() {
             
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
               <Button asChild size="lg" className="rounded-full shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-shadow">
-                <a href="#projects">
+                <a href="#projects" data-cursor="projects">
                   View Projects <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full bg-white/5 border-white/10 hover:bg-white/10 backdrop-blur-sm">
-                <a href="/Deepak_R_Resume.pdf" download>
+                <a href="/Deepak_R_Resume.pdf" download data-cursor="download">
                   Download Resume <Download className="ml-2 h-4 w-4" />
                 </a>
               </Button>

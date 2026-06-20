@@ -209,6 +209,7 @@ export default function Contact() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
+                  data-cursor="send"
                   className="w-full h-12 text-md font-semibold rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground"
                 >
                   {isSubmitting ? (

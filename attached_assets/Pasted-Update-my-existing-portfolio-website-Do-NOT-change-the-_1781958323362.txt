@@ -1,0 +1,181 @@
+Update my existing portfolio website.
+
+Do NOT change the overall design, dark theme, responsiveness, animations, EmailJS integration, project layout, or existing content.
+
+Apply the following updates:
+
+==================================
+UPDATE PROJECT:
+SMART ATTENDANCE MANAGEMENT SYSTEM
+==================================
+
+Make this my featured project and update the existing project modal content.
+
+PROJECT TITLE
+
+Smart Attendance Management System
+
+SHORT DESCRIPTION
+
+AI-powered attendance management desktop application using face recognition to automate attendance marking, analytics, reporting, and administration through a modern Qt 6 interface.
+
+TECHNOLOGIES USED
+
+• C++17
+• OpenCV 4.12
+• Qt 6 Widgets
+• LBPH Face Recognition
+• Haar Cascade Classifier
+• CSV Database Storage
+• Visual Studio 2026
+• CMake & Ninja
+
+PROJECT DETAILS MODAL
+
+Problem
+
+Manual attendance management is time-consuming, prone to human errors, and vulnerable to proxy attendance. Educational institutions require an automated and reliable solution for accurate attendance tracking.
+
+Features
+
+• Student Registration and Management
+• Face Dataset Collection using Webcam
+• LBPH Model Training
+• Real-Time Face Detection and Recognition
+• Liveness Detection
+• Automatic Attendance Marking
+• Duplicate Attendance Prevention
+• Unknown Face Detection
+• Attendance Analytics Dashboard
+• Date-Wise Attendance Reports
+• Student Profile Viewer
+• Email Report Generation
+• Admin Authentication
+• Modern Qt GUI Interface
+
+How It Works
+
+The system captures live video through a webcam.
+
+Haar Cascade detects faces.
+
+LBPH recognizes registered students.
+
+Liveness detection verifies genuine presence.
+
+Attendance records are automatically stored in CSV reports.
+
+Attendance statistics and reports are displayed through the Qt dashboard.
+
+Architecture
+
+Live Webcam Feed
+↓
+Face Detection (Haar Cascade)
+↓
+Face Preprocessing
+↓
+LBPH Face Recognition
+↓
+Student Database Lookup
+↓
+Liveness Verification
+↓
+Attendance Logging
+↓
+Analytics & Reports
+↓
+Qt Dashboard GUI
+
+Challenges Faced
+
+• Varying lighting conditions affected face detection and recognition accuracy.
+
+• Preventing proxy attendance using photos or mobile screens required liveness detection techniques.
+
+Future Scope
+
+• Integrate Deep Learning-based face recognition (FaceNet / ArcFace) for improved accuracy.
+
+• Develop a cloud-enabled web/mobile dashboard with multi-camera support for remote attendance monitoring.
+
+Outcome
+
+Successfully developed a complete AI-powered attendance management system capable of real-time facial recognition, automated attendance logging, attendance analytics, report generation, and GUI-based administration.
+
+The system reduces manual effort, improves attendance accuracy, and enhances security through liveness verification and automated record management.
+
+Additional Requirements
+
+* Add technology badges.
+* Add architecture display inside modal.
+* Keep current project card style.
+* Add project screenshot.
+* Make this appear as Project 1.
+
+==================================
+ADD PREMIUM CUSTOM CURSOR
+=========================
+
+Create a premium cursor system.
+
+Cursor Behavior
+
+Normal:
+
+* Hide default cursor.
+* Show smooth glowing blue cursor.
+* Add animated outer ring.
+
+Hover Effects
+
+Buttons:
+
+* Cursor enlarges.
+* Display 🚀 icon.
+
+URLs / GitHub / LinkedIn / Email / External Links:
+
+* Cursor changes color to cyan.
+* Display 🔗 icon.
+
+Project Cards:
+
+* Cursor expands.
+* Display "View".
+
+Project Detail Buttons:
+
+* Add glowing cyan interaction.
+
+Animation Requirements
+
+* Smooth interpolation.
+* 60 FPS feel.
+* Framer Motion compatible.
+
+Device Rules
+
+Desktop:
+Enable custom cursor.
+
+Mobile:
+Use default cursor.
+
+Accessibility
+
+* Do not interfere with clicking.
+* Preserve usability.
+* Disable automatically on touch devices.
+
+Build Requirements
+
+* Ensure Netlify deployment compatibility.
+* Ensure npm run build succeeds.
+* Preserve existing EmailJS functionality.
+
+After update:
+
+* Verify project modal works.
+* Verify cursor interactions work.
+* Verify mobile responsiveness.
