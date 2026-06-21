@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Wifi } from 'lucide-react';
+import { Wifi, Github } from 'lucide-react';
 import ProjectModal from '../ProjectModal';
 
 import secureFileImg from "@assets/Screenshot_2026-06-19_135320_1781873563742.png";
@@ -15,8 +15,10 @@ export type Project = {
   shortDesc: string;
   image?: string;
   placeholderIcon?: React.ReactNode;
+  customPlaceholder?: React.ReactNode;
   badges: string[];
   featured?: boolean;
+  githubUrl?: string;
   details: {
     problem: string;
     works: string;
@@ -27,6 +29,31 @@ export type Project = {
     outcome?: string;
   };
 };
+
+const WeatherPlaceholder = () => (
+  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-sky-900/30 via-slate-900/40 to-blue-900/20">
+    <svg width="64" height="56" viewBox="0 0 64 56" fill="none" className="drop-shadow-[0_0_12px_rgba(56,189,248,0.5)]">
+      {/* Sun */}
+      <circle cx="20" cy="16" r="8" fill="#fbbf24" fillOpacity="0.25" stroke="#fbbf24" strokeWidth="1.5" />
+      <circle cx="20" cy="16" r="4" fill="#fbbf24" fillOpacity="0.6" />
+      <line x1="20" y1="4"  x2="20" y2="2"  stroke="#fbbf24" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="20" y1="28" x2="20" y2="30" stroke="#fbbf24" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="8"  y1="16" x2="6"  y2="16" stroke="#fbbf24" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="32" y1="16" x2="34" y2="16" stroke="#fbbf24" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="11.5" y1="7.5"  x2="10.1" y2="6.1"  stroke="#fbbf24" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="28.5" y1="24.5" x2="29.9" y2="25.9" stroke="#fbbf24" strokeWidth="1.5" strokeLinecap="round" />
+      {/* Cloud */}
+      <ellipse cx="38" cy="30" rx="16" ry="10" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="1.5" />
+      <ellipse cx="28" cy="33" rx="10" ry="8"  fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="1.5" />
+      <ellipse cx="44" cy="34" rx="10" ry="7"  fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="1.5" />
+      {/* Rain drops */}
+      <line x1="30" y1="44" x2="28" y2="50" stroke="#38bdf8" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="38" y1="44" x2="36" y2="50" stroke="#38bdf8" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="46" y1="44" x2="44" y2="50" stroke="#38bdf8" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+    <span className="text-xs font-mono text-sky-300/70 tracking-widest uppercase">Weather Analytics</span>
+  </div>
+);
 
 const AttendancePlaceholder = () => (
   <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-blue-900/30 via-slate-900/40 to-purple-900/20">
@@ -95,6 +122,7 @@ const projects: Project[] = [
     title: "Secure File Management System",
     shortDesc: "Encrypted file storage platform with AES-256, SHA-256 integrity checks, and role-based access control.",
     image: secureFileImg,
+    githubUrl: "https://github.com/Deepak-3357/secure-file-management-system",
     badges: ["Java", "MySQL", "AES-256", "SHA-256", "JDBC"],
     details: {
       problem: "Sensitive file storage systems lack proper access controls and encryption, making them vulnerable to unauthorized access.",
@@ -110,6 +138,7 @@ const projects: Project[] = [
     title: "Responsive CPU Task Scheduler",
     shortDesc: "ML-assisted CPU scheduling simulator comparing FCFS, Round Robin, and Priority algorithms with a performance dashboard.",
     image: cpuSchedulerImg,
+    githubUrl: "https://github.com/Deepak-3357/responsive-cpu-task-scheduler",
     badges: ["Python", "Machine Learning", "FCFS", "Round Robin", "Priority"],
     details: {
       problem: "Understanding CPU scheduling algorithm trade-offs requires hands-on simulation with real performance metrics.",
@@ -125,6 +154,7 @@ const projects: Project[] = [
     title: "Custom CPU Simulator",
     shortDesc: "Interactive CPU simulator for designing custom instruction sets and visualizing step-by-step execution.",
     image: cpuSimulatorImg,
+    githubUrl: "https://github.com/Deepak-3357/custom-cpu-simulator",
     badges: ["Python", "Qt 6", "Computer Architecture"],
     details: {
       problem: "Learning CPU architecture through theory alone leaves gaps — students need interactive simulation of instruction execution to build intuition.",
@@ -140,6 +170,7 @@ const projects: Project[] = [
     title: "Bike Demand Prediction",
     shortDesc: "Machine learning model forecasting bike-sharing demand from historical data, visualized via Power BI.",
     image: bikeDemandImg,
+    githubUrl: "https://github.com/Deepak-3357/bike-demand-prediction-system",
     badges: ["Python", "Machine Learning", "Power BI", "Data Science"],
     details: {
       problem: "Bike-sharing companies struggle to predict demand, leading to poor resource allocation and reduced service quality.",
@@ -148,6 +179,39 @@ const projects: Project[] = [
       features: "Predictive modeling, data preprocessing & feature engineering, Power BI visualization dashboard",
       challenges: "Handling class imbalance and seasonal demand fluctuations; feature selection for time-series patterns",
       future: "Real-time prediction API, mobile app integration, demand-based dynamic pricing",
+    }
+  },
+  {
+    id: 7,
+    title: "Weather Prediction System",
+    shortDesc: "Machine learning based weather forecasting application that predicts weather conditions using historical meteorological data and advanced data analytics techniques.",
+    customPlaceholder: <WeatherPlaceholder />,
+    githubUrl: "https://github.com/Deepak-3357/weather-prediction-system",
+    badges: ["Python", "Machine Learning", "Pandas", "NumPy", "Matplotlib", "Scikit-Learn"],
+    details: {
+      problem: "Weather forecasting is essential for agriculture, transportation, disaster management, and daily planning. Traditional forecasting methods often struggle with rapidly changing weather conditions, making accurate prediction challenging.",
+      works: "The system processes historical weather data, performs preprocessing and feature engineering, trains machine learning models on weather parameters such as temperature, humidity, wind speed, and rainfall, and generates weather forecasts. Prediction results are visualized through interactive charts and analytics dashboards.",
+      architecture: "Historical Weather Dataset → Data Cleaning & Preprocessing → Feature Engineering → Machine Learning Model Training → Weather Prediction → Performance Evaluation → Visualization Dashboard → Forecast Reports",
+      features: [
+        "Historical Weather Data Analysis",
+        "Data Cleaning & Preprocessing",
+        "Feature Engineering",
+        "Weather Condition Prediction",
+        "Temperature Forecasting",
+        "Humidity & Rainfall Analysis",
+        "Machine Learning Model Training",
+        "Forecast Accuracy Evaluation",
+        "Data Visualization Dashboard",
+        "Performance Comparison of Models",
+      ],
+      challenges: [
+        "Handling missing and inconsistent weather records.",
+        "Selecting the most relevant weather features for accurate forecasting.",
+        "Improving prediction accuracy across different seasonal patterns.",
+        "Managing fluctuations caused by extreme weather conditions.",
+      ],
+      future: "Deep Learning based forecasting using LSTM networks. Real-time weather API integration. Cloud-based prediction platform. Mobile application for live weather updates. Regional forecasting using geospatial datasets.",
+      outcome: "Successfully developed a machine learning based weather prediction system capable of analyzing historical weather patterns, forecasting future weather conditions, and visualizing insights through interactive dashboards. The project demonstrates practical applications of data science and predictive analytics for real-world forecasting problems.",
     }
   },
 ];
@@ -191,6 +255,10 @@ export default function Projects() {
                       alt={project.title}
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
+                  ) : project.customPlaceholder ? (
+                    <div className="absolute inset-0 group-hover:scale-105 transition-transform duration-500">
+                      {project.customPlaceholder}
+                    </div>
                   ) : project.placeholderIcon ? (
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
                       {project.placeholderIcon}
@@ -236,15 +304,31 @@ export default function Projects() {
                     )}
                   </div>
 
-                  <Button
-                    data-cursor="detail"
-                    variant="outline"
-                    size="sm"
-                    onClick={() => setSelectedProject(project)}
-                    className="w-full border-white/10 bg-white/5 hover:bg-white/10 hover:border-primary/40 text-sm transition-all"
-                  >
-                    View Technical Details
-                  </Button>
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <Button
+                      data-cursor="detail"
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setSelectedProject(project)}
+                      className="flex-1 border-white/10 bg-white/5 hover:bg-white/10 hover:border-primary/40 text-sm transition-all"
+                    >
+                      View Technical Details
+                    </Button>
+                    {project.githubUrl && (
+                      <Button
+                        asChild
+                        data-cursor="link"
+                        variant="outline"
+                        size="sm"
+                        className="flex-1 border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/30 text-sm transition-all"
+                      >
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1.5">
+                          <Github className="w-3.5 h-3.5" />
+                          GitHub
+                        </a>
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}

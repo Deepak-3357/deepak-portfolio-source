@@ -1,7 +1,8 @@
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Project } from './sections/Projects';
-import { CheckCircle2, Target, Cpu, Code2, AlertTriangle, Rocket, Trophy } from 'lucide-react';
+import { CheckCircle2, Target, Cpu, Code2, AlertTriangle, Rocket, Trophy, Github } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -44,6 +45,21 @@ export default function ProjectModal({ project, open, onOpenChange }: ProjectMod
               </span>
             ))}
           </div>
+          {project.githubUrl && (
+            <div className="mt-4">
+              <Button
+                asChild
+                variant="outline"
+                size="sm"
+                className="border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/30 transition-all"
+              >
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <Github className="w-4 h-4" />
+                  GitHub Repository
+                </a>
+              </Button>
+            </div>
+          )}
         </DialogHeader>
 
         <div className="space-y-6">

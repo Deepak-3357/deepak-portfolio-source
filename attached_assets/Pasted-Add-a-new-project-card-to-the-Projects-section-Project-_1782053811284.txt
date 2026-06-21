@@ -1,0 +1,104 @@
+Add a new project card to the Projects section.
+
+Project Title:
+Weather Prediction System
+
+Project Category:
+Machine Learning | Data Analytics
+
+Short Description:
+Machine learning based weather forecasting application that predicts weather conditions using historical meteorological data and advanced data analytics techniques.
+
+Technologies:
+Python
+Machine Learning
+Pandas
+NumPy
+Matplotlib
+Scikit-Learn
+
+Create the project card using the exact same design, styling, animations, spacing, hover effects, and modal structure used by the existing project cards.
+
+When the user clicks "View Technical Details", open a modal containing the following sections:
+
+--------------------------------------------------
+
+WEATHER PREDICTION SYSTEM
+
+Technologies Used
+• Python
+• Machine Learning
+• Pandas
+• NumPy
+• Matplotlib
+• Scikit-Learn
+• Weather Dataset Analytics
+
+Problem
+
+Weather forecasting is essential for agriculture, transportation, disaster management, and daily planning. Traditional forecasting methods often struggle with rapidly changing weather conditions, making accurate prediction challenging.
+
+Features
+
+• Historical Weather Data Analysis
+• Data Cleaning & Preprocessing
+• Feature Engineering
+• Weather Condition Prediction
+• Temperature Forecasting
+• Humidity & Rainfall Analysis
+• Machine Learning Model Training
+• Forecast Accuracy Evaluation
+• Data Visualization Dashboard
+• Performance Comparison of Models
+
+How It Works
+
+The system processes historical weather data, performs preprocessing and feature engineering, trains machine learning models on weather parameters such as temperature, humidity, wind speed, and rainfall, and generates weather forecasts. Prediction results are visualized through interactive charts and analytics dashboards.
+
+Architecture
+
+Historical Weather Dataset
+↓
+Data Cleaning & Preprocessing
+↓
+Feature Engineering
+↓
+Machine Learning Model Training
+↓
+Weather Prediction
+↓
+Performance Evaluation
+↓
+Visualization Dashboard
+↓
+Forecast Reports
+
+Challenges Faced
+
+• Handling missing and inconsistent weather records.
+• Selecting the most relevant weather features for accurate forecasting.
+• Improving prediction accuracy across different seasonal patterns.
+• Managing fluctuations caused by extreme weather conditions.
+
+Future Scope
+
+• Deep Learning based forecasting using LSTM networks.
+• Real-time weather API integration.
+• Cloud-based prediction platform.
+• Mobile application for live weather updates.
+• Regional forecasting using geospatial datasets.
+
+Outcome
+
+Successfully developed a machine learning based weather prediction system capable of analyzing historical weather patterns, forecasting future weather conditions, and visualizing insights through interactive dashboards. The project demonstrates practical applications of data science and predictive analytics for real-world forecasting problems.
+
+--------------------------------------------------
+
+Design Requirements:
+
+• Use a weather-themed image or uploaded screenshot if available.
+• Match the visual style of Bike Demand Prediction, Smart Attendance, and CPU Scheduler project modals.
+• Preserve dark theme, blue/purple accents, glassmorphism effects, and responsive layout.
+• Do not modify any existing project cards.
+• Place this project after "Bike Demand Prediction".
+• Ensure mobile and desktop responsiveness.
