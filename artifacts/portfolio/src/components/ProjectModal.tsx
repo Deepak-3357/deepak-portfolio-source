@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Project } from './sections/Projects';
 import { CheckCircle2, Target, Cpu, Code2, AlertTriangle, Rocket, Trophy, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -58,6 +59,37 @@ export default function ProjectModal({ project, open, onOpenChange }: ProjectMod
                   GitHub Repository
                 </a>
               </Button>
+            </div>
+          )}
+          {project.id === 1 && (
+            <div className="mt-4 flex flex-col gap-4">
+              <div>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <div className="w-full sm:w-fit cursor-not-allowed">
+                      <Button
+                        disabled
+                        variant="outline"
+                        size="sm"
+                        className="w-full sm:w-auto border-white/10 bg-white/5 text-sm transition-all opacity-50 pointer-events-none"
+                      >
+                        🔗 GitHub Repository (Coming Soon)
+                      </Button>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    Repository will be available soon
+                  </TooltipContent>
+                </Tooltip>
+              </div>
+              <div className="border-t border-white/5 pt-4">
+                <h4 className="flex items-center gap-2 text-base font-bold text-foreground mb-2">
+                  <span>🚧</span> GitHub Repository
+                </h4>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  The source code repository is currently being prepared and organized for public release. The GitHub repository will be added soon with complete source code, project documentation, build instructions, and implementation details.
+                </p>
+              </div>
             </div>
           )}
         </DialogHeader>
