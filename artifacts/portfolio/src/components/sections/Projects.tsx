@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Github } from 'lucide-react';
-import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import ProjectModal from '../ProjectModal';
 
+import smartAttendanceImg from "@assets/smart_attendance_dashboard.png";
 import secureFileImg from "@assets/Screenshot_2026-06-19_135320_1781873563742.png";
 import cpuSchedulerImg from "@assets/Screenshot_2026-06-19_135729_1781873563743.png";
 import cpuSimulatorImg from "@assets/Screenshot_2026-06-19_135813_1781873563743.png";
@@ -52,7 +52,8 @@ const projects: Project[] = [
     id: 1,
     title: "Smart Attendance Management System",
     shortDesc: "AI-powered desktop application using real-time face recognition, liveness detection, and Qt 6 GUI for automated attendance management and analytics.",
-    placeholderIcon: null,
+    image: smartAttendanceImg,
+    githubUrl: "https://github.com/Deepak-3357/smart-attendance-system",
     badges: ["C++17", "OpenCV 4.12", "Qt 6", "LBPH", "Haar Cascade", "CMake"],
     details: {
       problem: "Manual attendance management is time-consuming, prone to human errors, and vulnerable to proxy attendance. Educational institutions require an automated and reliable solution for accurate attendance tracking.",
@@ -284,7 +285,7 @@ export default function Projects() {
                     )}
                   </div>
 
-                  <div className={project.id === 1 ? "flex flex-col gap-2" : "flex flex-col sm:flex-row gap-2"}>
+                  <div className="flex flex-col sm:flex-row gap-2">
                     <Button
                       data-cursor="detail"
                       variant="outline"
@@ -308,37 +309,7 @@ export default function Projects() {
                         </a>
                       </Button>
                     )}
-                    {project.id === 1 && (
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <div className="w-full cursor-not-allowed">
-                            <Button
-                              disabled
-                              variant="outline"
-                              size="sm"
-                              className="w-full border-white/10 bg-white/5 text-sm transition-all opacity-50 pointer-events-none"
-                            >
-                              🔗 GitHub Repository (Coming Soon)
-                            </Button>
-                          </div>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          Repository will be available soon
-                        </TooltipContent>
-                      </Tooltip>
-                    )}
                   </div>
-
-                  {project.id === 1 && (
-                    <div className="mt-4 pt-4 border-t border-white/5">
-                      <h4 className="text-xs font-semibold text-foreground/80 mb-1 flex items-center gap-1.5">
-                        <span>🚧</span> GitHub Repository
-                      </h4>
-                      <p className="text-xs text-muted-foreground leading-relaxed">
-                        The source code repository is currently being prepared and organized for public release. The GitHub repository will be added soon with complete source code, project documentation, build instructions, and implementation details.
-                      </p>
-                    </div>
-                  )}
                 </div>
               </motion.div>
             ))}
