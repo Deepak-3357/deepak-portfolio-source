@@ -6,7 +6,7 @@ export default function TypingAnimation({
   className = "" 
 }: { 
   sequence: string[]; 
-  wrapper?: keyof JSX.IntrinsicElements; 
+  wrapper?: keyof React.JSX.IntrinsicElements; 
   className?: string;
 }) {
   const [text, setText] = useState("");

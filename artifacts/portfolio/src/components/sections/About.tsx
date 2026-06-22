@@ -8,20 +8,19 @@ const CountUp = ({ end, duration = 2 }: { end: number, duration?: number }) => {
   const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
-    if (isInView) {
-      let start = 0;
-      const increment = end / (duration * 60);
-      const timer = setInterval(() => {
-        start += increment;
-        if (start >= end) {
-          setCount(end);
-          clearInterval(timer);
-        } else {
-          setCount(Math.ceil(start));
-        }
-      }, 1000 / 60);
-      return () => clearInterval(timer);
-    }
+    if (!isInView) return;
+    let start = 0;
+    const increment = end / (duration * 60);
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(Math.ceil(start));
+      }
+    }, 1000 / 60);
+    return () => clearInterval(timer);
   }, [end, duration, isInView]);
 
   return <span ref={ref}>{count}</span>;
