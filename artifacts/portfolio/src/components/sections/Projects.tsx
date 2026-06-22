@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Wifi, Github } from 'lucide-react';
+import { Github } from 'lucide-react';
 import ProjectModal from '../ProjectModal';
 
 import secureFileImg from "@assets/Screenshot_2026-06-19_135320_1781873563742.png";
 import cpuSchedulerImg from "@assets/Screenshot_2026-06-19_135729_1781873563743.png";
 import cpuSimulatorImg from "@assets/Screenshot_2026-06-19_135813_1781873563743.png";
 import bikeDemandImg from "@assets/Screenshot_2026-06-19_140112_1781873563744.png";
+import wifiImg from "@assets/network_topology_1782100025045.png";
+import weatherImg from "@assets/weather_prediction_interface_1782100065024.png";
 
 export type Project = {
   id: number;
@@ -30,30 +32,6 @@ export type Project = {
   };
 };
 
-const WeatherPlaceholder = () => (
-  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-sky-900/30 via-slate-900/40 to-blue-900/20">
-    <svg width="64" height="56" viewBox="0 0 64 56" fill="none" className="drop-shadow-[0_0_12px_rgba(56,189,248,0.5)]">
-      {/* Sun */}
-      <circle cx="20" cy="16" r="8" fill="#fbbf24" fillOpacity="0.25" stroke="#fbbf24" strokeWidth="1.5" />
-      <circle cx="20" cy="16" r="4" fill="#fbbf24" fillOpacity="0.6" />
-      <line x1="20" y1="4"  x2="20" y2="2"  stroke="#fbbf24" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="20" y1="28" x2="20" y2="30" stroke="#fbbf24" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="8"  y1="16" x2="6"  y2="16" stroke="#fbbf24" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="32" y1="16" x2="34" y2="16" stroke="#fbbf24" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="11.5" y1="7.5"  x2="10.1" y2="6.1"  stroke="#fbbf24" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="28.5" y1="24.5" x2="29.9" y2="25.9" stroke="#fbbf24" strokeWidth="1.5" strokeLinecap="round" />
-      {/* Cloud */}
-      <ellipse cx="38" cy="30" rx="16" ry="10" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="1.5" />
-      <ellipse cx="28" cy="33" rx="10" ry="8"  fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="1.5" />
-      <ellipse cx="44" cy="34" rx="10" ry="7"  fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="1.5" />
-      {/* Rain drops */}
-      <line x1="30" y1="44" x2="28" y2="50" stroke="#38bdf8" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="38" y1="44" x2="36" y2="50" stroke="#38bdf8" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="46" y1="44" x2="44" y2="50" stroke="#38bdf8" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-    <span className="text-xs font-mono text-sky-300/70 tracking-widest uppercase">Weather Analytics</span>
-  </div>
-);
 
 const AttendancePlaceholder = () => (
   <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-blue-900/30 via-slate-900/40 to-purple-900/20">
@@ -106,7 +84,8 @@ const projects: Project[] = [
     id: 2,
     title: "Wi-Fi 6 WLAN Architecture",
     shortDesc: "Simulated high-density enterprise network topology using Wi-Fi 6 with OFDMA and MU-MIMO.",
-    placeholderIcon: <Wifi className="w-16 h-16 text-purple-400" />,
+    githubUrl: "https://github.com/Deepak-3357/wifi6-network-architecture",
+    image: wifiImg,
     badges: ["Cisco Packet Tracer", "Wi-Fi 6", "OFDMA", "MU-MIMO"],
     details: {
       problem: "High-density enterprise environments need efficient Wi-Fi that traditional Wi-Fi 5 cannot handle at scale.",
@@ -185,7 +164,7 @@ const projects: Project[] = [
     id: 7,
     title: "Weather Prediction System",
     shortDesc: "Machine learning based weather forecasting application that predicts weather conditions using historical meteorological data and advanced data analytics techniques.",
-    customPlaceholder: <WeatherPlaceholder />,
+    image: weatherImg,
     githubUrl: "https://github.com/Deepak-3357/weather-prediction-system",
     badges: ["Python", "Machine Learning", "Pandas", "NumPy", "Matplotlib", "Scikit-Learn"],
     details: {
