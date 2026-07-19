@@ -3,13 +3,10 @@ import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 
 const achievements = [
-  "Developed an AI-powered attendance management system using computer vision and facial recognition (OpenCV, LBPH, Haar Cascade) to automate student identification and attendance logging.",
-  "Built a CPU scheduling simulator implementing FCFS, SJF, and Round Robin algorithms with ML-assisted performance analysis and a comparison dashboard.",
-  "Designed a secure file management platform with AES-256 encryption, SHA-256 integrity verification, and role-based access control (RBAC) to protect sensitive data.",
-  "Developed machine learning applications for demand forecasting and analytics, including a bike-sharing demand prediction model visualized via Power BI.",
-  "Designed and simulated a Wi-Fi 6 WLAN enterprise network architecture using Cisco Packet Tracer, implementing OFDMA and MU-MIMO for high-density environments.",
-  "Built a custom CPU simulator supporting user-defined instruction set design, program execution, and register/memory visualization for hands-on architecture learning.",
-  "Developed projects spanning Artificial Intelligence, Computer Vision, Operating Systems, Computer Architecture, Networking, and Database Management Systems."
+  "Maintained a 9.0 CGPA in Computer Science Engineering at SIMATS Engineering, demonstrating consistent academic excellence.",
+  "Completed 7+ software development projects across AI, networking, security, and full-stack web development, with multiple projects published as open-source repositories on GitHub featuring comprehensive documentation and version control.",
+  "Served as a Student Coordinator for NEURALZENATHON 2026, contributing to event planning, coordination, and successful execution of the hackathon.",
+  "Lead Tech Organizer of BYTEFORGE 2026, overseeing website development, registration portal, authentication system, participant management, and technical infrastructure to ensure seamless event execution."
 ];
 
 const containerVariants = {

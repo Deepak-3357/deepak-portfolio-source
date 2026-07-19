@@ -41,7 +41,7 @@ export default function Hero() {
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full bg-white/5 border-white/10 hover:bg-white/10 backdrop-blur-sm">
-                <a href="/Deepak_R_Resume.pdf" download data-cursor="download">
+                <a href="/Deepak_Rajesh_Resume.pdf" download data-cursor="download">
                   Download Resume <Download className="ml-2 h-4 w-4" />
                 </a>
               </Button>

@@ -77,8 +77,8 @@ export default function About() {
                 <p className="text-sm text-muted-foreground">Programming Languages</p>
               </div>
               <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-6 flex flex-col items-center justify-center text-center">
-                <div className="text-primary mb-4 font-mono font-bold h-8 flex items-center">AI/OS</div>
-                <p className="text-sm text-muted-foreground">Core Focus</p>
+                <div className="text-primary mb-4 font-mono font-bold h-8 flex items-center">2+</div>
+                <p className="text-sm text-muted-foreground">Years Coding</p>
               </div>
             </div>
           </div>
