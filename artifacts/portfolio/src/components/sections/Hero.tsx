@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Download, ArrowRight } from 'lucide-react';
 import TypingAnimation from '../TypingAnimation';
 import { Button } from '@/components/ui/button';
-import profilePhoto from "@assets/DE_PHOTO_1781873583208.JPG";
+import profilePhoto from "@assets/DE_PHOTO_1781873583208.jpg";
 
 export default function Hero() {
   return (
