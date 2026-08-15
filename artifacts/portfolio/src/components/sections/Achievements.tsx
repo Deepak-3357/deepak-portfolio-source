@@ -2,11 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 
-const achievements = [
+const achievements: React.ReactNode[] = [
   "Maintained a 9.0 CGPA in Computer Science Engineering at SIMATS Engineering, demonstrating consistent academic excellence.",
   "Completed 7+ software development projects across AI, networking, security, and full-stack web development, with multiple projects published as open-source repositories on GitHub featuring comprehensive documentation and version control.",
   "Served as a Student Coordinator for NEURALZENATHON 2026, contributing to event planning, coordination, and successful execution of the hackathon.",
-  "Lead Tech Organizer of BYTEFORGE 2026, overseeing website development, registration portal, authentication system, participant management, and technical infrastructure to ensure seamless event execution."
+  "Lead Tech Organizer of BYTEFORGE 2026, overseeing website development, registration portal, authentication system, participant management, and technical infrastructure to ensure seamless event execution.",
+  <span key="cto">
+    <strong>💼 Chief Technology Officer at Lumenyx Technologies Pvt. Ltd.</strong>
+    <br />
+    Currently serving as Chief Technology Officer, contributing to technology strategy, software development, technical decision-making, and innovative technology solutions.
+  </span>
 ];
 
 const containerVariants = {
