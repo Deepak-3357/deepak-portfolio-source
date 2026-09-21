@@ -11,6 +11,9 @@ import cpuSimulatorImg from "@assets/Screenshot_2026-06-19_135813_1781873563743.
 import bikeDemandImg from "@assets/Screenshot_2026-06-19_140112_1781873563744.png";
 import wifiImg from "@assets/network_topology_1782100025045.png";
 import weatherImg from "@assets/weather_prediction_interface_1782100065024.png";
+import greenCloudImg from "@assets/greencloud_dashboard.png";
+import smartNavImg from "@assets/smart_navigation_dashboard.png";
+import probStatImg from "@assets/probstat_dashboard.png";
 
 export type Project = {
   id: number;
@@ -193,6 +196,102 @@ const projects: Project[] = [
       ],
       future: "Deep Learning based forecasting using LSTM networks. Real-time weather API integration. Cloud-based prediction platform. Mobile application for live weather updates. Regional forecasting using geospatial datasets.",
       outcome: "Successfully developed a machine learning based weather prediction system capable of analyzing historical weather patterns, forecasting future weather conditions, and visualizing insights through interactive dashboards. The project demonstrates practical applications of data science and predictive analytics for real-world forecasting problems.",
+    }
+  },
+  {
+    id: 8,
+    title: "Green Cloud Framework",
+    shortDesc: "AI-Aware Virtual Machine Placement and Energy Optimization",
+    image: greenCloudImg,
+    githubUrl: "https://github.com/Deepak-3357/greencloud-ai",
+    badges: ["Java 17", "CloudSim Plus", "Maven", "SLF4J", "Logback", "CSV Reporting"],
+    details: {
+      problem: "Modern cloud data centers consume massive amounts of energy and experience frequent SLA violations due to inefficient VM placement and resource allocation.",
+      works: "A CloudSim Plus based Java simulation framework for monitoring cloud resources, analysing VM placement, estimating energy consumption, tracking migrations and SLA violations, and visualizing cloud performance through a live monitoring dashboard.",
+      architecture: "Cloud Data Center Simulation → Host & VM Creation → Cloudlet Workload Simulation → VM Placement & Migration Engine → CPU/RAM & Energy Monitoring → Live Dashboard & CSV Reports",
+      features: [
+        "Cloud data center simulation",
+        "Physical host and VM creation",
+        "Cloudlet workload simulation",
+        "VM placement",
+        "CPU and RAM monitoring",
+        "Energy estimation",
+        "VM migration tracking",
+        "SLA monitoring",
+        "Live dashboard",
+        "CSV reporting",
+        "Foundation for AI-aware VM placement and energy optimization",
+      ],
+      challenges: [
+        "Accurately tracking CPU and RAM utilization across dynamic VM workloads.",
+        "Estimating energy consumption and monitoring SLA violations in real-time.",
+        "Visualizing multi-metric cloud simulation metrics live without slowing execution.",
+      ],
+      future: "Implement AI-driven reinforcement learning models for dynamic, predictive VM placement and intelligent energy optimization.",
+    }
+  },
+  {
+    id: 9,
+    title: "Smart Navigation & Logistics Management System",
+    shortDesc: "A Data Structure Based Logistics Management System Using C",
+    image: smartNavImg,
+    githubUrl: "https://github.com/Deepak-3357/Smart-Navigation-Logistics-Management-System",
+    badges: ["C", "Raylib", "CMake", "MSYS2", "Data Structures & Algorithms"],
+    details: {
+      problem: "Complex supply chains require efficient data structures and algorithms to handle warehouse inventory, package queues, fast search, route optimization, and logistics analytics.",
+      works: "A C and Raylib based logistics management application that applies data structures and algorithms to warehouse management, package processing, product searching, route optimization, priority delivery, and logistics analytics.",
+      architecture: "Raylib GUI Interface → Package Queue & Inventory → Graph Topologies → Shortest Path Solvers (Dijkstra/Floyd-Warshall) → Search & Sort Engine → Analytics & File Storage",
+      features: [
+        "Linked List",
+        "Queue",
+        "AVL Tree",
+        "Hash Table",
+        "Priority Queue / Heap",
+        "Graphs",
+        "BFS",
+        "DFS",
+        "Dijkstra's Algorithm",
+        "Floyd-Warshall Algorithm",
+        "Linear Search",
+        "Binary Search",
+        "Sorting",
+        "File handling",
+        "Raylib GUI",
+        "Logistics analytics and reporting",
+      ],
+      challenges: [
+        "Implementing custom data structures natively in C without external high-level data structure libraries.",
+        "Integrating graph pathfinding algorithms with real-time UI rendering in Raylib.",
+      ],
+      future: "Add real-time traffic condition simulations, multi-vehicle routing problems (VRP), and mobile client support.",
+    }
+  },
+  {
+    id: 10,
+    title: "ProbStat Analyzer",
+    shortDesc: "A Web-Based Probability Distribution Analysis and Statistical Modeling System",
+    image: probStatImg,
+    githubUrl: "https://github.com/Deepak-3357/probstat-analyzer",
+    badges: ["Python", "Flask", "Pandas", "NumPy", "SciPy", "Matplotlib", "Plotly", "Bootstrap"],
+    details: {
+      problem: "Analyzing raw numerical datasets, identifying their underlying probability distributions, and selecting appropriate statistical models often requires complex scripting.",
+      works: "A Flask-based statistical analysis system that analyzes numerical datasets, performs descriptive statistics, classifies data as discrete or continuous, fits probability distributions, evaluates goodness-of-fit using KS, AIC and BIC, calculates probabilities, and generates visualizations.",
+      architecture: "Dataset Upload (CSV) → Data Preprocessing & Cleaning → Discrete/Continuous Classifier → Distribution Fitting Engine (SciPy/NumPy) → KS/AIC/BIC Goodness-of-Fit Evaluator → Plotly/Matplotlib Visualization → Flask Web GUI",
+      features: [
+        "Numerical dataset ingestion and cleaning",
+        "Descriptive statistics computation",
+        "Discrete vs Continuous data classification",
+        "Distribution fitting (Normal, Uniform, Exponential, Binomial, Poisson, Geometric)",
+        "Goodness-of-fit evaluation (Kolmogorov-Smirnov test, AIC, BIC)",
+        "Probability and percentile calculations",
+        "Interactive charts using Plotly and Matplotlib",
+        "PDF report generation and export",
+      ],
+      challenges: [
+        "Classifying datasets accurately between discrete and continuous distributions.",
+        "Computing accurate parameters for multiple statistical distributions dynamically and presenting goodness-of-fit rankings.",
+      ],
+      future: "Support multi-variate distribution fitting, bayesian inference modeling, and real-time streaming data analysis.",
     }
   },
 ];

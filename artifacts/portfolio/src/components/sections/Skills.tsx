@@ -5,7 +5,7 @@ const proficiencyData = [
   {
     level: "Advanced",
     tagline: "Production-ready expertise",
-    skills: ["Python", "C", "C++", "MySQL"],
+    skills: ["Python", "C", "C++", "MySQL", "Data Structures & Algorithms"],
     badge: "bg-cyan-500/10 border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/20 hover:border-cyan-400/60",
     label: "text-cyan-400",
     dot: "bg-cyan-400",
@@ -15,7 +15,7 @@ const proficiencyData = [
   {
     level: "Intermediate",
     tagline: "Comfortable and growing",
-    skills: ["Java", "Power BI", "JavaScript", "HTML", "CSS"],
+    skills: ["Java", "Flask", "Pandas", "NumPy", "SciPy", "Power BI", "Cloud Computing", "CloudSim Plus"],
     badge: "bg-violet-500/10 border-violet-500/30 text-violet-300 hover:bg-violet-500/20 hover:border-violet-400/60",
     label: "text-violet-400",
     dot: "bg-violet-400",
@@ -25,7 +25,7 @@ const proficiencyData = [
   {
     level: "Learning",
     tagline: "Actively exploring",
-    skills: ["Machine Learning", "Computer Vision"],
+    skills: ["Machine Learning", "Computer Vision", "JavaScript", "TypeScript", "React"],
     badge: "bg-orange-500/10 border-orange-500/30 text-orange-300 hover:bg-orange-500/20 hover:border-orange-400/60",
     label: "text-orange-400",
     dot: "bg-orange-400",
@@ -45,19 +45,19 @@ const skillsData = [
   },
   {
     category: "Backend & Database",
-    skills: ["Node.js", "Express.js", "MySQL", "Supabase"]
+    skills: ["Node.js", "Express.js", "Flask", "MySQL", "Supabase"]
   },
   {
     category: "AI Tools",
     skills: ["OpenAI", "Gemini", "Antigravity", "Lovable AI"]
   },
   {
-    category: "Cloud & Deployment",
-    skills: ["Netlify", "Vercel", "Replit"]
+    category: "Cloud & Build",
+    skills: ["CloudSim Plus", "Maven", "Netlify", "Vercel", "Replit"]
   },
   {
     category: "Tools",
-    skills: ["Git", "GitHub", "VS Code", "Qt 6", "Power BI"]
+    skills: ["Git", "GitHub", "VS Code", "Qt 6", "Power BI", "CMake"]
   }
 ];
 
